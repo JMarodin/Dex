@@ -43,7 +43,7 @@ module.exports = {
     kovan: {
       provider: () =>
         new provider(
-          sectrets.privateKeys,
+          secrets.privateKeys,
           'https://kovan.infura.io/v3/a4cfee2f37b24b1991663ed9980245e6',
           0,
           3
