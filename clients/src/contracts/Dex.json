@@ -25736,6 +25736,68 @@
     "version": "0.6.3+commit.8dda9521.Emscripten.clang"
   },
   "networks": {
+    "4": {
+      "events": {
+        "0xdb0c486e680ba8026643e6a85f8d157b5e7bcd4b32b54d564542570a9eb20416": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "tradeId",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "orderId",
+              "type": "uint256"
+            },
+            {
+              "indexed": true,
+              "internalType": "bytes32",
+              "name": "ticker",
+              "type": "bytes32"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "trader1",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "trader2",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "price",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "date",
+              "type": "uint256"
+            }
+          ],
+          "name": "NewTrade",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x02a41a72DC8b8aE130C6bba251dc74Cd0A36f3A9",
+      "transactionHash": "0x8345ce5b4b47f0e2e994d81fd32081865cc82efcc26c0275a3acfb145606f0ce"
+    },
     "5777": {
       "events": {
         "0xdb0c486e680ba8026643e6a85f8d157b5e7bcd4b32b54d564542570a9eb20416": {
@@ -25799,8 +25861,8 @@
       "transactionHash": "0x00c820db06a3dae977cf09e07fcc83cd912b330ffda3abc634e43d958aaec06c"
     }
   },
-  "schemaVersion": "3.3.3",
-  "updatedAt": "2021-01-28T12:27:43.238Z",
+  "schemaVersion": "3.2.0",
+  "updatedAt": "2021-02-06T14:47:02.655Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}

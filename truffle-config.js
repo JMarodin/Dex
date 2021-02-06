@@ -39,16 +39,21 @@ module.exports = {
    * $ truffle test --network <network-name>
    */
 
+  contracts_build_directory: path.join(__dirname, 'clients/src/contracts'),
+
   networks: {
-    kovan: {
+    rinkeby: {
       provider: () =>
         new provider(
           secrets.privateKeys,
-          'https://kovan.infura.io/v3/a4cfee2f37b24b1991663ed9980245e6',
+          'wss://rinkeby.infura.io/ws/v3/a4cfee2f37b24b1991663ed9980245e6',
           0,
-          3
+          4
         ),
-      network_id: 42,
+      network_id: 4,
+      networkCheckTimeout: 1000000000,
+      timeoutBlocks: 200,
+      gas: 10000000,
     },
   },
 
@@ -57,7 +62,6 @@ module.exports = {
     // timeout: 100000
   },
 
-  contracts_build_directory: path.join(__dirname, 'clients/src/contracts'),
   // Configure your compilers
   compilers: {
     solc: {
