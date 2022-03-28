@@ -36,18 +36,25 @@ module.exports = async function (deployer, _network, accounts) {
     const ticker = await token.name();
     await dex.deposit(amount, web3.utils.fromAscii(ticker), { from: trader });
   };
-  await Promise.all(
-    [dai, bat, rep, zrx].map((token) => seedTokenBalance(token, trader1))
-  );
-  await Promise.all(
-    [dai, bat, rep, zrx].map((token) => seedTokenBalance(token, trader2))
-  );
-  await Promise.all(
-    [dai, bat, rep, zrx].map((token) => seedTokenBalance(token, trader3))
-  );
-  await Promise.all(
-    [dai, bat, rep, zrx].map((token) => seedTokenBalance(token, trader4))
-  );
+  await seedTokenBalance(dai, trader1);
+  await seedTokenBalance(bat, trader1);
+  await seedTokenBalance(rep, trader1);
+  await seedTokenBalance(zrx, trader1);
+
+  await seedTokenBalance(dai, trader2);
+  await seedTokenBalance(bat, trader2);
+  await seedTokenBalance(rep, trader2);
+  await seedTokenBalance(zrx, trader2);
+
+  await seedTokenBalance(dai, trader3);
+  await seedTokenBalance(bat, trader3);
+  await seedTokenBalance(rep, trader3);
+  await seedTokenBalance(zrx, trader3);
+
+  await seedTokenBalance(dai, trader4);
+  await seedTokenBalance(bat, trader4);
+  await seedTokenBalance(rep, trader4);
+  await seedTokenBalance(zrx, trader4);
 
   const increaseTime = async (seconds) => {
     await web3.currentProvider.send(

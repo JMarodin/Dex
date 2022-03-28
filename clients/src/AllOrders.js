@@ -1,14 +1,14 @@
 import React from 'react';
 import Moment from 'react-moment';
 
-function AllOrders({ orders }) {
+function AllOrders({orders}) {
   const renderList = (orders, side, className) => {
     return (
       <>
         <table className={`table table-striped mb-0 order-list ${className}`}>
           <thead>
             <tr className="table-title order-list-title">
-              <th colSpan="3">{side}</th>
+              <th colSpan='3'>{side}</th>
             </tr>
             <tr>
               <th>amount</th>
@@ -30,7 +30,7 @@ function AllOrders({ orders }) {
         </table>
       </>
     );
-  };
+  }
 
   return (
     <div className="card">

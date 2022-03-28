@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import { getWeb3, getContracts } from './utils.js';
 import App from './App.js';
 
@@ -15,24 +15,30 @@ function LoadingContainer() {
       setWeb3(web3);
       setContracts(contracts);
       setAccounts(accounts);
-    };
+    }
     init();
-    // eslint-disable-next-line
+  // eslint-disable-next-line
   }, []);
 
   const isReady = () => {
     return (
-      typeof web3 !== 'undefined' &&
-      typeof contracts !== 'undefined' &&
-      accounts.length > 0
+      typeof web3 !== 'undefined' 
+      && typeof contracts !== 'undefined'
+      && accounts.length > 0
     );
-  };
+  }
 
   if (!isReady()) {
     return <div>Loading...</div>;
   }
 
-  return <App web3={web3} accounts={accounts} contracts={contracts} />;
+  return (
+    <App
+      web3={web3}
+      accounts={accounts}
+      contracts={contracts}
+    />
+  );
 }
 
 export default LoadingContainer;

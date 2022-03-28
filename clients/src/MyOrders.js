@@ -1,14 +1,14 @@
 import React from 'react';
 import Moment from 'react-moment';
 
-function MyOrders({ orders }) {
+function MyOrders({orders}) {
   const renderList = (orders, side, className) => {
     return (
       <>
         <table className={`table table-striped mb-0 order-list ${className}`}>
           <thead>
             <tr className="table-title order-list-title">
-              <th colSpan="3">{side}</th>
+              <th colSpan='3'>{side}</th>
             </tr>
             <tr>
               <th>amount/filled</th>
@@ -19,9 +19,7 @@ function MyOrders({ orders }) {
           <tbody>
             {orders.map((order) => (
               <tr key={order.id}>
-                <td>
-                  {order.amount}/{order.filled}
-                </td>
+                <td>{order.amount}/{order.filled}</td>
                 <td>{order.price}</td>
                 <td>
                   <Moment fromNow>{parseInt(order.date) * 1000}</Moment>
@@ -32,7 +30,7 @@ function MyOrders({ orders }) {
         </table>
       </>
     );
-  };
+  }
 
   return (
     <div id="order-list" className="card">
